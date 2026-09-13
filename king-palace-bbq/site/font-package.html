@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>King Palace · Font Package Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=Bodoni+Moda:opsz,wght@6..96,600..900&family=DM+Sans:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600..900&display=swap" rel="stylesheet">
+  <style>
+    :root{--cream:#f5f0e5;--red:#aa2524;--red-dark:#84201f;--gold:#e9b95b;--ink:#292820;--muted:#756e62;--line:#d3c8b7;--sans:'DM Sans',sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--red-dark);color:var(--cream);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:1480px;margin:0 auto;padding:clamp(28px,5vw,80px)}
+    .masthead{display:flex;align-items:flex-end;justify-content:space-between;gap:30px;padding-bottom:28px;border-bottom:1px solid #f5f0e54d}
+    .kicker{margin:0 0 10px;color:var(--gold);font-size:10px;font-weight:700;letter-spacing:2.2px;text-transform:uppercase}
+    h1{margin:0;font-family:'Fraunces',serif;font-size:clamp(42px,6.6vw,98px);font-weight:800;line-height:.86;letter-spacing:-.05em}
+    .masthead p{max-width:260px;margin:0;color:#f5f0e5bd;font-size:12px;line-height:1.7;text-align:right}
+    .package-meta{display:flex;justify-content:space-between;gap:20px;padding:15px 0 35px;color:#f5f0e5a6;font-size:9px;letter-spacing:1.4px;text-transform:uppercase}
+    .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .card{position:relative;overflow:hidden;min-height:620px;padding:25px;background:var(--cream);color:var(--ink);border:1px solid #f5f0e536;box-shadow:0 20px 45px #34110f36}
+    .card:before{content:attr(data-no);position:absolute;right:20px;top:15px;color:#cfc3b2;font-size:11px;font-weight:700;letter-spacing:1px}
+    .card.recommended{background:var(--gold);color:var(--red-dark);transform:translateY(-14px)}
+    .card.recommended:after{content:'RECOMMENDED';position:absolute;right:20px;top:42px;color:var(--red);font-size:8px;font-weight:700;letter-spacing:1.5px}
+    .card-kicker{margin:0 0 18px;color:var(--red);font-size:9px;font-weight:700;letter-spacing:1.7px;text-transform:uppercase}
+    .card h2{margin:0 0 8px;font-size:clamp(25px,2.5vw,39px);line-height:.95;letter-spacing:-.04em}
+    .card .descriptor{min-height:42px;margin:0;color:var(--muted);font-size:11px;line-height:1.6}
+    .recommended .descriptor{color:#653b25}
+    .hero-sample{margin:48px 0 30px;color:var(--red);font-size:clamp(51px,5.1vw,88px);font-weight:800;line-height:.82;letter-spacing:-.08em;text-transform:uppercase}
+    .bodoni .hero-sample{font-family:'Bodoni Moda',serif}
+    .fraunces .hero-sample{font-family:'Fraunces',serif;letter-spacing:-.1em}
+    .barlow .hero-sample{font-family:'Barlow Condensed',sans-serif;letter-spacing:-.035em}
+    .outline{color:transparent;-webkit-text-stroke:1.5px currentColor}
+    .sample-rule{height:1px;margin:0 0 20px;background:var(--line)}
+    .nav-sample{display:flex;gap:16px;align-items:center;color:var(--red);font-size:13px;font-weight:700}
+    .bodoni .nav-sample{font-family:'Bodoni Moda',serif}
+    .fraunces .nav-sample{font-family:'Fraunces',serif}
+    .barlow .nav-sample{font-family:'Barlow Condensed',sans-serif;font-size:18px;letter-spacing:.3px}
+    .nav-sample span:last-child{border-bottom:2px solid var(--red);padding-bottom:4px}
+    .menu-sample{margin-top:55px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .menu-sample h3{margin:0 0 15px;color:var(--red);font-size:11px;letter-spacing:1.2px}
+    .menu-sample-row{display:flex;align-items:baseline;justify-content:space-between;gap:14px}
+    .menu-sample-row strong{font-size:13px}
+    .menu-sample-row b{color:var(--red);font-family:'Fraunces',serif;font-size:20px}
+    .font-details{position:absolute;left:25px;right:25px;bottom:25px;display:flex;justify-content:space-between;gap:10px;padding-top:15px;border-top:1px solid var(--line);color:var(--muted);font-size:9px;letter-spacing:1px;text-transform:uppercase}
+    .recommended .font-details{color:#653b25}
+    .footer-note{display:flex;justify-content:space-between;gap:25px;margin-top:30px;color:#f5f0e5b3;font-size:11px;line-height:1.6}
+    .footer-note strong{color:var(--gold)}
+    @media(max-width:900px){.masthead{display:block}.masthead p{margin-top:20px;text-align:left}.cards{grid-template-columns:1fr}.card,.card.recommended{min-height:570px;transform:none}.hero-sample{font-size:clamp(70px,17vw,130px);margin-top:65px}.font-details{position:static;margin-top:55px}.footer-note{display:block}}
+    @media(max-width:500px){.wrap{padding:25px 18px}.package-meta{padding-bottom:25px}.card{padding:21px;min-height:490px}.hero-sample{font-size:20vw;margin:45px 0 25px}.menu-sample{margin-top:36px}.font-details{margin-top:38px}}
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="masthead">
+      <div><p class="kicker">King Palace Chinese BBQ · Type study</p><h1>Font package<br>mockup.</h1></div>
+      <p>Three possible voices for the hero, navigation, menu, and printed restaurant details.</p>
+    </header>
+    <div class="package-meta"><span>Version 01 · Editorial directions</span><span>Hero specimen / Nav / Menu</span></div>
+    <section class="cards" aria-label="Font package directions">
+      <article class="card bodoni" data-no="01">
+        <p class="card-kicker">Imperial editorial</p>
+        <h2>Bodoni Moda</h2>
+        <p class="descriptor">High-contrast, fashion-forward, and ceremonial. The current live direction with the outlined “BBQ” treatment.</p>
+        <div class="hero-sample">All hail<br>the <span class="outline">bbq.</span></div>
+        <div class="sample-rule"></div>
+        <div class="nav-sample"><span>Our story</span><span>The menu</span><span>Find us</span></div>
+        <div class="menu-sample"><h3>FROM THE ROAST COUNTER</h3><div class="menu-sample-row"><strong>BBQ Roast Pork &amp; Roast Duck</strong><b>$16</b></div></div>
+        <div class="font-details"><span>Display: Bodoni Moda</span><span>Body: DM Sans</span></div>
+      </article>
+      <article class="card recommended fraunces" data-no="02">
+        <p class="card-kicker">Roast counter</p>
+        <h2>Fraunces</h2>
+        <p class="descriptor">Warm, expressive, and food-first. Softer than the editorial option while still feeling special and unmistakably crafted.</p>
+        <div class="hero-sample">All hail<br>the bbq.</div>
+        <div class="sample-rule"></div>
+        <div class="nav-sample"><span>Our story</span><span>The menu</span><span>Find us</span></div>
+        <div class="menu-sample"><h3>FROM THE ROAST COUNTER</h3><div class="menu-sample-row"><strong>BBQ Roast Pork &amp; Roast Duck</strong><b>$16</b></div></div>
+        <div class="font-details"><span>Display: Fraunces</span><span>Body: DM Sans</span></div>
+      </article>
+      <article class="card barlow" data-no="03">
+        <p class="card-kicker">Brass signage</p>
+        <h2>Barlow Condensed</h2>
+        <p class="descriptor">Punchy, legible, and rooted in storefront lettering. The boldest and most immediate direction for a busy menu.</p>
+        <div class="hero-sample">All hail<br>the bbq.</div>
+        <div class="sample-rule"></div>
+        <div class="nav-sample"><span>Our story</span><span>The menu</span><span>Find us</span></div>
+        <div class="menu-sample"><h3>FROM THE ROAST COUNTER</h3><div class="menu-sample-row"><strong>BBQ Roast Pork &amp; Roast Duck</strong><b>$16</b></div></div>
+        <div class="font-details"><span>Display: Barlow Condensed</span><span>Body: DM Sans</span></div>
+      </article>
+    </section>
+    <div class="footer-note"><span><strong>Recommendation:</strong> Fraunces gives the BBQ mark more warmth and appetite.</span><span>The live page is unchanged by this mockup.</span></div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,66 @@
+/* Restaurant menu: one reading surface, consistent controls, aligned prices. */
+#menu { padding-block:80px; }
+#menu::before, #menu .section-heading::after { content:none; }
+#menu > .section-heading, #menu .menu-sheet { max-width:1120px; margin-inline:auto; }
+#menu > .section-heading { align-items:flex-end; gap:24px; border:0; padding:0; margin-bottom:32px; }
+#menu .section-heading .eyebrow { color:inherit; font-size:11px; letter-spacing:1.5px; margin-bottom:14px; }
+#menu h2 { color:inherit; font-size:clamp(40px,4.5vw,60px); font-weight:600; letter-spacing:-1.8px; line-height:1.12; }
+#menu .menu-summary { font-size:15px; line-height:1.7; margin-top:14px; }
+#menu .section-heading .text-link { color:inherit; flex-shrink:0; font-size:13px; padding:10px 0; }
+#menu .menu-sheet { background:#faf7f0; color:#292820; padding:32px 36px 24px; border:1px solid #d8d0c1; border-radius:8px; }
+#menu .menu-sheet-top { display:flex; justify-content:space-between; align-items:center; gap:20px; padding-bottom:22px; }
+#menu .menu-sheet-top .menu-sheet-label { margin:0; font-family:var(--display); font-size:clamp(28px,2.5vw,38px); font-weight:800; letter-spacing:-1px; line-height:1; color:#84201f; }
+#menu .menu-search { width:220px; max-width:220px; min-height:44px; height:44px; padding:0 14px; margin:0; background:transparent; border:1px solid #c9c1b3; box-shadow:none; color:#645f55; }
+#menu .menu-search input { font-size:14px; line-height:1.5; outline:none; }
+#menu .menu-search:focus-within { border-color:#84201f; outline:2px solid #84201f; outline-offset:2px; }
+#menu .menu-tools { display:block; position:sticky; top:82px; z-index:12; padding:12px 0; border:0; border-bottom:1px solid #ddd6ca; background:#faf7f0; box-shadow:none; }
+#menu .menu-filters { display:flex; width:100%; flex-wrap:nowrap; gap:6px; padding:4px 2px; overflow:auto; scrollbar-width:thin; scrollbar-color:#c9c1b3 transparent; }
+#menu .menu-filters::-webkit-scrollbar { display:block; height:3px; }
+#menu .menu-filters::-webkit-scrollbar-thumb { background:#c9c1b3; border-radius:9px; }
+#menu .filter { flex:0 0 auto; min-height:44px; padding:10px 14px; font:500 13px/1.5 var(--body); letter-spacing:0; border:1px solid #d8d0c1; border-radius:999px; background:transparent; color:#464238; box-shadow:none; transform:none; }
+#menu .filter:hover { background:#eee8dd; border-color:#b9afa0; }
+#menu .filter.active { background:#84201f; border-color:#84201f; color:#fffaf2; box-shadow:none; }
+#menu .filter:focus-visible { outline:2px solid #84201f; outline-offset:2px; }
+#menu .menu-panel-heading { margin:30px 0 10px; padding:0 0 16px; border-bottom:1px solid #bcb2a1; align-items:baseline; gap:16px; }
+#menu .menu-panel-heading h3 { display:block; font:600 27px/1.25 var(--display); letter-spacing:-.5px; color:#292820; }
+#menu .menu-panel-heading h3::before { content:none; }
+#menu #menu-count { flex-shrink:0; font:400 12px/1.5 var(--body); color:#645f55; text-transform:none; letter-spacing:0; }
+#menu .menu-items { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 48px; padding:0; min-height:0; }
+#menu .menu-group-heading { grid-column:1/-1; margin:28px 0 0; padding-bottom:12px; border-bottom:1px solid #bcb2a1; font:600 22px/1.4 var(--display); color:#292820; letter-spacing:-.3px; }
+#menu .menu-item, #menu .menu-item:hover { min-height:106px; display:grid; grid-template-columns:minmax(0,1fr) auto; align-content:start; gap:7px 20px; padding:23px 0; border:0; border-bottom:1px solid #e0d9cd; background:transparent; box-shadow:none; transform:none; transition:none; }
+#menu .menu-item h4 { display:block; font:600 15px/1.5 var(--body); color:#292820; }
+#menu .menu-item h4::before { content:none; }
+#menu .menu-item p { font:400 13px/1.6 var(--body); min-height:0; color:#645f55; }
+#menu .menu-price, #menu .menu-item:hover .menu-price { font:500 15px/1.5 var(--body); font-variant-numeric:tabular-nums; color:#292820; background:none; border-radius:0; padding:0; box-shadow:none; }
+#menu .menu-item .menu-category-label { font-size:11px; letter-spacing:.3px; text-transform:none; color:#84201f; margin:0; }
+#menu .menu-note { margin:24px 0 0; padding:0; border:0; align-items:flex-start; gap:28px; }
+#menu .menu-note p { font:400 12px/1.7 var(--body); color:#645f55; max-width:650px; }
+#menu .menu-note a { font-size:13px; color:#84201f; min-height:44px; }
+#menu .menu-empty { padding:48px 16px; }
+#menu .menu-empty h3 { font-size:28px; letter-spacing:-.5px; }
+#menu .menu-empty p { font-size:14px; }
+@media(max-width:1100px) { #menu .menu-tools { top:76px; } }
+@media(max-width:800px) {
+  #menu { padding-block:56px; }
+  #menu > .section-heading { display:block; }
+  #menu .section-heading .text-link { margin-top:14px; }
+  #menu .menu-sheet { padding:22px 24px; }
+  #menu .menu-tools { top:72px; }
+  #menu .menu-items { grid-template-columns:1fr; }
+}
+@media(max-width:560px) {
+  #menu { padding-inline:18px; }
+  #menu .menu-sheet { padding:20px 18px; margin-inline:-4px; }
+  #menu .menu-tools { top:68px; }
+  #menu .menu-sheet-top { display:block; padding-bottom:10px; }
+  #menu .menu-sheet-top .menu-sheet-label { display:block; margin-bottom:15px; font-size:28px; }
+  #menu .menu-search { width:220px; max-width:100%; }
+  #menu .menu-panel-heading h3 { font-size:23px; }
+  #menu .menu-panel-heading { gap:12px; }
+  #menu .menu-item { gap:6px 14px; }
+  #menu .menu-note { flex-direction:column; gap:8px; }
+}
+@media print {
+  #menu .menu-sheet { border:0; padding:0; background:white; }
+  #menu .menu-sheet-top, #menu .menu-tools { display:none; }
+}
